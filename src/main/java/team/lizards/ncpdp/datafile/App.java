@@ -9,7 +9,7 @@ public class App {
     System.out.println("Hello World!");
     
     ExcelParser excelParser = new ExcelParser("C:\\Workspace\\" +
-    		"Java\\Enterprise\\excelparser\\AZ_Q4_2012_CF.xls");
+    		"Java\\Enterprise\\excelparser\\data.xlsx");
     excelParser.parse();
   }
 }

@@ -28,7 +28,7 @@ public class ExcelParser {
         Iterator<Cell> cellIt = row.cellIterator();
         while (cellIt.hasNext()) {
           Cell cell = cellIt.next();
-          System.out.print(cell.getStringCellValue() + " ");
+          System.out.print(cell.getStringCellValue() + " | ");
         }
         
         System.out.println("");
