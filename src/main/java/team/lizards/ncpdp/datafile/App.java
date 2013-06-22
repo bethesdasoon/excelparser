@@ -2,12 +2,14 @@ package team.lizards.ncpdp.datafile;
 
 /**
  * Hello world!
- *
+ * 
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+public class App {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+    
+    ExcelParser excelParser = new ExcelParser("C:\\Workspace\\" +
+    		"Java\\Enterprise\\excelparser\\AZ_Q4_2012_CF.xls");
+    excelParser.parse();
+  }
 }
