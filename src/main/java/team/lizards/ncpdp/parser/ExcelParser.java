@@ -80,7 +80,6 @@ public class ExcelParser extends FileParser {
       }
       
       rowCollection.add(rowValue);
-      break;
     }
     
     return rowCollection;

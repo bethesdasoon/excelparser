@@ -15,14 +15,14 @@ public class App {
   public static void main(String[] args) {
     System.out.println("Hello World!");
     
-    String path = "C:\\Workspace\\Java\\Enterprise\\excelparser\\data.xlsx";    
+    String path = "C:\\Workspace\\Java\\Enterprise\\data.xlsx";    
     FileParser parser = new ExcelParser(new File(path));
     
     try {
       List<Map<Integer, String>> rows = parser.getFields();
       for (Map<Integer, String> row: rows) {
         for (Map.Entry<Integer, String> entry: row.entrySet()) {
-          System.out.print(entry.getValue() + " ");
+          System.out.print(entry.getKey() + ":" + entry.getValue() + " ");
         }
         
         System.out.println("");
