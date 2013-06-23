@@ -28,9 +28,6 @@ public class ExcelParser extends FileParser {
     Workbook workbook = WorkbookFactory.create(getFile());
     Sheet sheet = workbook.getSheetAt(0);
     
-    System.out.println("First sheet: " + workbook.getSheetAt(0));
-    System.out.println("Second sheet: " + workbook.getSheetAt(1));
-    
     Map<Integer, String> columns = new HashMap<>();
     Row firstRow = sheet.getRow(sheet.getFirstRowNum());
     
@@ -44,46 +41,46 @@ public class ExcelParser extends FileParser {
   }
   
   @Override
-  public void getFields() 
+  public List<Map<Integer, String>> getFields() 
       throws Exception {  
     Workbook workbook = WorkbookFactory.create(getFile());
     int numSheets = workbook.getNumberOfSheets();
+    List<Map<Integer, String>> rows = new ArrayList<>();
     
     for(int index = 0; index < numSheets; index++) {
-      getSheetRows(workbook.getSheetAt(index));
+      rows.addAll(getSheetRows(workbook.getSheetAt(index)));
     }
     
-    /*Iterator<Row> rowIt = sheet.rowIterator();
-    while (rowIt.hasNext()) {
-      Row row = rowIt.next();
-      
-      Iterator<Cell> cellIt = row.cellIterator();
-      while (cellIt.hasNext()) {
-        Cell cell = cellIt.next();
-        System.out.print(cell.getStringCellValue() + " | ");
-        cell.getColumnIndex();
-      }
-      
-      System.out.println("");
-      break;
-    }*/
+    return rows;
   }
   
   private List<Map<Integer, String>> getSheetRows(Sheet sheet) {
     List<Map<Integer, String>> rowCollection = new ArrayList<>();
     
     Iterator<Row> rowIt = sheet.rowIterator();
+    
+    /* First row is heading, so
+     * skip it over.
+     */
+    if (rowIt.hasNext()) {
+      rowIt.next();
+    }
+    
     while (rowIt.hasNext()) {
       Row row = rowIt.next();
       Map<Integer, String> rowValue = new HashMap<>();
       
       Iterator<Cell> cellIt = row.cellIterator();
       while (cellIt.hasNext()) {
-        Cell cell = cellIt.next();
-        rowValue.put(cell.getColumnIndex(), cell.getStringCellValue());
+        Cell cell = cellIt.next();        
+        String value = (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) 
+            ? Double.toString(cell.getNumericCellValue())
+            : cell.getStringCellValue();
+        rowValue.put(cell.getColumnIndex(), value);
       }
       
       rowCollection.add(rowValue);
+      break;
     }
     
     return rowCollection;

@@ -2,6 +2,7 @@ package team.lizards.ncpdp.parser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Map;
 
 public abstract class FileParser {
@@ -30,5 +31,5 @@ public abstract class FileParser {
 
   public abstract Map<Integer, String> getFieldNames() throws Exception;
 
-  public abstract void getFields() throws Exception;
+  public abstract List<Map<Integer, String>> getFields() throws Exception;
 }
