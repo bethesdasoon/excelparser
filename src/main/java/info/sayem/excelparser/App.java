@@ -1,11 +1,12 @@
-package team.lizards.ncpdp.datafile;
+package info.sayem.excelparser;
+
+import info.sayem.excelparser.parser.ExcelParser;
+import info.sayem.excelparser.parser.FileParser;
 
 import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-import team.lizards.ncpdp.parser.ExcelParser;
-import team.lizards.ncpdp.parser.FileParser;
 
 /**
  * Hello world!

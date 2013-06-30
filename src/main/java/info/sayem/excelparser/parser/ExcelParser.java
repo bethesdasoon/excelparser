@@ -1,4 +1,4 @@
-package team.lizards.ncpdp.parser;
+package info.sayem.excelparser.parser;
 
 import java.io.File;
 import java.util.ArrayList;
