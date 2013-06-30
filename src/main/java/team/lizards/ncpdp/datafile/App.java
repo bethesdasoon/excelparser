@@ -19,6 +19,11 @@ public class App {
     FileParser parser = new ExcelParser(new File(path));
     
     try {
+      Map<Integer, String> fieldNames = parser.getFieldNames();
+      for (Map.Entry<Integer, String> fieldName: fieldNames.entrySet()) {
+        System.out.print(fieldName.getValue() + ", ");
+      }
+      
       List<Map<Integer, String>> rows = parser.getFields();
       for (Map<Integer, String> row: rows) {
         for (Map.Entry<Integer, String> entry: row.entrySet()) {
