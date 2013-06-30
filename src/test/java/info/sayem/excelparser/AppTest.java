@@ -1,4 +1,4 @@
-package team.lizards.ncpdp.datafile;
+package info.sayem.excelparser;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
