@@ -11,6 +11,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.apache.poi.version>3.9</org.apache.poi.version>
 	</properties>
 
 	<dependencies>
@@ -18,12 +19,12 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.9</version>
+			<version>${org.apache.poi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.9</version>
+			<version>${org.apache.poi.version}</version>
 		</dependency>
 
 		<!-- Test Frameworks -->
