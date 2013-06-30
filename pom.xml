@@ -4,11 +4,10 @@
 
 	<groupId>team.lizards</groupId>
 	<artifactId>excelparser</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>trunk-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
 	<name>excelparser</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/sayembd/excelparser</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,6 +26,7 @@
 			<version>3.9</version>
 		</dependency>
 
+		<!-- Test Frameworks -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
